@@ -1,17 +1,42 @@
+body{
+    background-color: #201f1c;
+}
+
+
+/*---------------------------------- NAVBAR ----------------------------------*/
+
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #fff;
 }
 .navbar {
+    background-color: #201f1c;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link{
+    color: #ffffff;
+}
+
+.navbar-toggler-icon{
+    color: #ff331f;
+}
+
+
+/*-------------------------------- MAIN SECTION -------------------------------*/
+
+.plananddiet{
+    color: #ff331f;
 }
 
 .hero-section {
     padding: 100px 0;
-    background-color: #f8f9fa;
+    background-color: #201f1c;
     text-align: center;
 }
 .hero-section h1 {
+    color: #fff;
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 50px;
@@ -27,18 +52,58 @@
     margin-bottom: 15px;
 }
 .age-block p {
+    color: #fff;
     font-size: 1.2rem;
     font-weight: bold;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    padding: 5px 0;
 }
 .consent-text {
     margin-top: 50px;
+    font-size: 1rem;
+    color: #69616f;
+}
+.consent-text a {
+    color: #69616f;
+    text-decoration: underline;
+}
+.consent-text a:hover {
+    text-decoration: none;
+}
+
+/*------------------------------ FOOTER -------------------------------*/
+
+footer {
+    background-color: #201f1c;
+    padding: 40px 0;
+    border-top: 1px solid #69616f;
+}
+footer h5 {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+footer p {
+    margin: 5px 0;
     font-size: 0.9rem;
     color: #666;
 }
-.consent-text a {
-    color: #007bff;
+footer a {
+    color: #666;
+    text-decoration: underline;
+}
+footer a:hover {
+    color: #69616f;
     text-decoration: none;
 }
-.consent-text a:hover {
-    text-decoration: underline;
+.footer-section {
+    margin-bottom: 30px;
+}
+.footer-bottom {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
 }

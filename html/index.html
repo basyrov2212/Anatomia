@@ -13,14 +13,16 @@
 <body>
     <!-- Шапка сайта -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <!-- Логотип или текст "Anatomia" -->
                 <a class="navbar-brand" href="#">Anatomia</a>
 
                 <!-- Бургер-меню -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" 
+                data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" data-bs-theme="red"></span>
                 </button>
 
                 <!-- Вкладки меню -->
@@ -44,7 +46,7 @@
         <!-- Основная секция -->
     <section class="hero-section">
         <div class="container">
-            <h1>Получите план тренировок и питания в соответствии с вашим возрастом</h1>
+            <h1>Получите <span class="plananddiet">план тренировок и питания</span> в соответствии с вашим возрастом</h1>
             <div class="row row-cols-1 row-cols-lg-3 row-cols-md-6 row-cols-sm-12">
                 <!-- Блок 1 -->
                 <div class="col-lg-3 col-md-6 col-sm-12 age-block">
@@ -74,19 +76,59 @@
         </div>
     </section>
 
-    <div class="container mt-5">
-        <div class="progress mb-4">
-            <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        <div id="questionContainer" class="card">
-            <div class="card-body">
-                <h5 id="questionText" class="card-title"></h5>
-                <div id="options" class="list-group"></div>
-                <div id="feedback" class="mt-3"></div>
-                <button id="nextButton" class="btn btn-primary mt-3" style="display: none;">Следующий вопрос</button>
+    <!--<section>
+        <div class="container mt-5">
+            <div class="progress mb-4">
+                <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div id="questionContainer" class="card">
+                <div class="card-body">
+                    <h5 id="questionText" class="card-title"></h5>
+                    <div id="options" class="list-group"></div>
+                    <div id="feedback" class="mt-3"></div>
+                    <button id="nextButton" class="btn btn-primary mt-3" style="display: none;">Следующий вопрос</button>
+                </div>
             </div>
         </div>
-    </div>
+    </section> -->
+    
+
+    <!-- Футер -->
+    <footer class="container">
+        <div class="row">
+            <!-- Левый блок: Информация о компании -->
+            <div class="col-md-4 footer-section">
+                <h5>Anatomia</h5>
+                <p>©2025 Anatomia Все права защищены</p>
+                <p>Все права на сайт и материалы, размещенные на сайте, принадлежат ООО «LINAR GARAEV»</p>
+                <p>107023, Г. Нижнекамск, ул. За КФС на Вахитова, дом 30, этаж 2, комната отдела продаж</p>
+                <p>ИНН: 88005553535</p>
+                <p>ОГРН: 111777888222333444</p>
+            </div>
+
+            <!-- Центральный блок: Контакты -->
+            <div class="col-md-4 footer-section">
+                <h5>Контакты</h5>
+                <p><a href="mailto:help.fithub@mail.ru">Написать в поддержку</a></p>
+                <p>+79257921021</p>
+                <p>help.anatomia@mail.ru</p>
+            </div>
+
+            <!-- Правый блок: Правовая информация -->
+            <div class="col-md-4 footer-section">
+                <h5>Правовая информация</h5>
+                <p><a href="privacy.html">Правила конфиденциальности</a></p>
+                <p><a href="public.html">Публичная оферта</a></p>
+                <p><a href="unsubscribe.html">Отмена подписки(не надо)</a></p>
+            </div>
+        </div>
+
+        <!-- Нижняя часть футера -->
+        <div class="footer-bottom">
+            <p>©2025 Anatomia. Все права защищены.</p>
+        </div>
+    </footer>
+
 
     
     <!-- Подключаем Bootstrap JS (для работы бургер-меню) -->
