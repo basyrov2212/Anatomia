@@ -19,9 +19,9 @@ body{
     color: #ffffff;
 }
 
-.navbar-toggler-icon{
-    color: #ff331f;
-}
+.navbar .navbar-toggler .navbar-toggler-icon {
+    color: #fff;
+  }
 
 
 /*-------------------------------- MAIN SECTION -------------------------------*/
