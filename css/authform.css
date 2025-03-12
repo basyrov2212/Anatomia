@@ -1,0 +1,224 @@
+body{
+    background-color: #201f1c;
+    color: #fff;
+}
+
+.privacy-section {
+    padding: 40px 0;
+    border: 3px solid #ff331f;
+    border-radius: 20px;
+    margin: 20px;
+}
+.privacy-section h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.privacy-section h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.privacy-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.privacy-section ul {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+.privacy-section ul li {
+    margin-bottom: 10px;
+}
+.privacy-section a {
+    color: #007bff;
+    text-decoration: none;
+}
+.privacy-section a:hover {
+    text-decoration: underline;
+}
+
+/*------------------------- СТРАНИЦА ОТМЕНЫ ПОДПИСКИ ------------------------*/
+
+.auth-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.auth-container {
+    background-color: #333;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+.auth-container h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+}
+.auth-container p {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+
+
+/* Базовые стили для поля ввода */
+.auth-container .form-control-email {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease; /* Плавный переход для всех свойств */
+    outline: none; /* Убираем стандартный outline */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+/* Эффект при фокусе */
+.auth-container .form-control-email:focus {
+    border-color: #ff331f; /* Цвет рамки при фокусе */
+    box-shadow: 0 4px 8px rgba(255, 51, 31, 0.2); /* Тень при фокусе */
+    transform: translateY(-2px); /* Легкое поднятие */
+}
+
+/* Анимация placeholder */
+.auth-container .form-control-email::placeholder {
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.auth-container .form-control-email:focus::placeholder {
+    color: transparent; /* Плейсхолдер исчезает при фокусе */
+}
+
+/* Эффект "волны" при фокусе */
+.auth-container .form-control-email {
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-container .form-control-email::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 51, 31, 0.1); /* Полупрозрачный цвет */
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    pointer-events: none; /* Чтобы не мешать вводу */
+}
+
+.auth-container .form-control-email:focus::after {
+    transform: translate(-50%, -50%) scale(1); /* Увеличение "волны" */
+}
+
+
+/* Базовые стили для поля ввода  ПАРОЛЯ*/
+.auth-container .form-control-password {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease; /* Плавный переход для всех свойств */
+    outline: none; /* Убираем стандартный outline */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+/* Эффект при фокусе */
+.auth-container .form-control-password:focus {
+    border-color: #ff331f; /* Цвет рамки при фокусе */
+    box-shadow: 0 4px 8px rgba(255, 51, 31, 0.2); /* Тень при фокусе */
+    transform: translateY(-2px); /* Легкое поднятие */
+}
+
+/* Анимация placeholder */
+.auth-container .form-control-password::placeholder {
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.auth-container .form-control-password:focus::placeholder {
+    color: transparent; /* Плейсхолдер исчезает при фокусе */
+}
+
+/* Эффект "волны" при фокусе */
+.auth-container .form-control-password {
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-container .form-control-password::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 51, 31, 0.1); /* Полупрозрачный цвет */
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    pointer-events: none; /* Чтобы не мешать вводу */
+}
+
+.auth-container .form-control-password:focus::after {
+    transform: translate(-50%, -50%) scale(1); /* Увеличение "волны" */
+}
+
+
+
+.auth-container .btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #ff331f;
+    border-color: #BF4D41;
+    cursor: pointer; /* Курсор в виде указателя */
+    transition: all 0.3s ease; /* Плавный переход для всех свойств */
+    position: relative; /* Для эффекта поднятия */
+    overflow: hidden; /* Для анимации псевдоэлемента */
+}
+
+.auth-container .btn:hover {
+    background-color: #BF4D41; /* Новый цвет фона */
+    border-color: #ff331f; /* Новый цвет рамки */
+    color: #fff; /* Цвет текста остается белым */
+    transform: translateY(-5px); /* Поднятие кнопки */
+    box-shadow: 0 8px 16px rgba(255, 51, 31, 0.3); /* Тень */
+}
+
+.auth-container .btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2); /* Белый полупрозрачный цвет */
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    pointer-events: none; /* Чтобы не мешать кликам */
+}
+
+.auth-container .btn:hover::after {
+    transform: translate(-50%, -50%) scale(1); /* Увеличение "волны" */
+}
