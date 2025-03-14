@@ -1,0 +1,116 @@
+body {
+    background-color: #201f1c;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h2{
+    color: #fff;
+}
+
+.progress {
+    height: 20px;
+    border-radius: 10px;
+    background-color: #34322d;
+}
+
+.progress-bar {
+    background-color: #ff331f;
+    transition: width 0.3s ease;
+}
+
+.options {
+    color: #fff;
+}
+
+.btn-next {
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #ff331f;
+    border-color: #BF4D41;
+    cursor: pointer; /* Курсор в виде указателя */
+    transition: all 0.3s ease; /* Плавный переход для всех свойств */
+    position: relative; /* Для эффекта поднятия */
+    overflow: hidden; /* Для анимации псевдоэлемента */
+}
+
+.btn-next:hover {
+    background-color: #BF4D41; /* Новый цвет фона */
+    border-color: #ff331f; /* Новый цвет рамки */
+    color: #fff; /* Цвет текста остается белым */
+    transform: translateY(-5px); /* Поднятие кнопки */
+    box-shadow: 0 8px 16px rgba(255, 51, 31, 0.3); /* Тень */
+}
+
+.btn-next::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2); /* Белый полупрозрачный цвет */
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    pointer-events: none; /* Чтобы не мешать кликам */
+}
+
+.btn-next:hover::after {
+    transform: translate(-50%, -50%) scale(1); /* Увеличение "волны" */
+}
+
+.alert {
+    margin-top: 20px;
+}
+
+
+/*----------------------   АНИМАЦИЯ КРУГОВ   ---------------------*/
+
+.background-animation {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 0, 0, 0.3);
+    border-radius: 50%;
+    filter: blur(50px);
+    animation: move 20s infinite ease-in-out;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(200px, 150px);
+    }
+    50% {
+        transform: translate(400px, 50px);
+    }
+    75% {
+        transform: translate(200px, 200px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}

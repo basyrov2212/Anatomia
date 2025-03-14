@@ -26,13 +26,16 @@ body {
 
 /*-------------------------------- MAIN SECTION -------------------------------*/
 
+.age-block a {
+    text-decoration: none;
+}
+
 .plananddiet{
     color: #ff331f;
 }
 
 .hero-section {
     padding: 100px 0;
-    background-color: #201f1c;
     text-align: center;
 }
 .hero-section h1 {
@@ -101,9 +104,7 @@ body {
 /*------------------------------ FOOTER -------------------------------*/
 
 footer {
-    background-color: #201f1c;
     padding: 40px 0;
-    border-top: 1px solid #69616f;
 }
 footer h5 {
     color: #fff;
@@ -139,6 +140,7 @@ footer a:hover {
 
 .background-animation {
     position: fixed;
+    z-index: -1;
     top: 0;
     left: 0;
     width: 100%;
