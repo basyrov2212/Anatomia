@@ -1,19 +1,76 @@
 body {
-    font-family: Arial, sans-serif;
+    background-color: #201f1c;
+    color: #fff;
 }
 
-.container {
-    max-width: 800px;
-    margin: auto;
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+.navbar {
+    background-color: #1a1816;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    z-index: 10;
 }
 
-.progress {
-    height: 20px;
-    margin-bottom: 10px;
+.sidebar {
+    position: fixed;
+    top: 56px; /* Высота навбара */
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    padding: 48px 0 0;
+    box-shadow: inset -10px 0 0 rgba(0, 0, 0, .1);
+    background-color: #201f1c;
 }
 
-.list-group-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+.nav-link.active {
+    color: #ff331f;
+}
+
+.content-section {
+    padding: 20px;
+}
+
+.support-links img {
+    margin: 10px;
+}
+
+.offcanvas-start {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.offcanvas.show {
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        transform: translateX(0); /* Сайдбар всегда видим */
+    }
+}
+
+.btn{
+    position: absolute;
+    background-color: #ff331f;
+    top: 50%;
+    height: 100px;
+    width: 5px;
 }
