@@ -114,3 +114,57 @@ body {
         transform: translate(0, 0);
     }
 }
+
+/* Базовые стили для поля ввода */
+.input-text {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease; /* Плавный переход для всех свойств */
+    outline: none; /* Убираем стандартный outline */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+/* Эффект при фокусе */
+.input-text:focus {
+    border-color: #ff331f; /* Цвет рамки при фокусе */
+    box-shadow: 0 4px 8px rgba(255, 51, 31, 0.2); /* Тень при фокусе */
+    transform: translateY(-2px); /* Легкое поднятие */
+}
+
+/* Анимация placeholder */
+.input-text::placeholder {
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.input-text:focus::placeholder {
+    color: transparent; /* Плейсхолдер исчезает при фокусе */
+}
+
+/* Эффект "волны" при фокусе */
+.input-text {
+    position: relative;
+    overflow: hidden;
+}
+
+.input-text::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 51, 31, 0.1); /* Полупрозрачный цвет */
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    pointer-events: none; /* Чтобы не мешать вводу */
+}
+
+.input-text:focus::after {
+    transform: translate(-50%, -50%) scale(1); /* Увеличение "волны" */
+}
