@@ -5,7 +5,8 @@ const questions = [
             { text: "Здоровье", feedback: "Сюда нужен дополнительный текст." },
             { text: "Внешний вид", feedback: "Сюда нужен дополнительный текст" },
             { text: "Уверенность в себе", feedback: "Сюда нужен дополнительный текст." }
-        ]
+        ],
+        key: "motiv"
     },
     {
         question: "Какого результата вы хотите достичь?",
@@ -16,19 +17,25 @@ const questions = [
         ]
     },
     {
-        question: "Ваш возраст",
+        question: "Укажите ваш конкретный возраст:",
         options: [
-            { text: "до 18 лет", feedback: "А зачем, на главной уже идет отбор по возрасту. И сюда нужен дополнительный текст." },
-            { text: "18-35 лет", feedback: "А зачем, на главной уже идет отбор по возрасту. И сюда нужен дополнительный текст." },
-            { text: "35-50 лет", feedback: "А зачем, на главной уже идет отбор по возрасту. И сюда нужен дополнительный текст." },
-            { text: "Более 50 лет", feedback: "А зачем, на главной уже идет отбор по возрасту. И сюда нужен дополнительный текст." }
-        ]
+            { text: "", input: true } 
+        ],
+        key: "age",
     },
     {
         question: "Укажите ваш рост:",
         options: [
             { text: "", input: true } 
-        ]
+        ],
+        key: "height",
+    },
+    {
+        question: "Укажите ваш вес:",
+        options: [
+            { text: "", input: true } 
+        ],
+        key: "weight",
     },
     {
         question: "У вас есть медицинские противопоказания для похудения?",
@@ -49,9 +56,8 @@ const questions = [
     {
         question: "Есть ли у вас хронические заболевания?",
         options: [
-            { text: "Да (укажите)" } ,
             { text: "", input: true } ,
-            { text: "Нет", feedback: "Сюда нужен дополнительный текст" }
+            { text: "Нет", feedback: "Укажите, пожалуйста, правдивую информацию." }
         ]
     },
     {
@@ -154,11 +160,11 @@ const questions = [
     {
         question: "Как вы оцениваете свой уровень физической активности?",
         options: [
-            { text: "Очень низкий", feedback: "Сюда нужен дополнительный текст" },
             { text: "Низкий", feedback: "Сюда нужен дополнительный текст" },
             { text: "Средний", feedback: "Сюда нужен дополнительный текст" },
             { text: "Высокий", feedback: "Сюда нужен дополнительный текст" }
-        ]
+        ],
+        key: "activityLevel"
     },
     {
         question: "Сколько шагов в день в среднем Вы проходите?",
@@ -212,7 +218,7 @@ const questions = [
         ]
     },
 ];
-
+const userData = {}; // Объект для хранения ответов пользователя
 let currentQuestion = 0;
 
 const progressBar = document.getElementById('progress-bar');
@@ -233,8 +239,7 @@ function loadQuestion() {
             input.className = 'input-text';
             input.placeholder = 'Введите ваш ответ';
             input.addEventListener('input', () => {
-                feedbackElement.textContent = `Вы ввели: ${input.value} см.`;
-                feedbackElement.style.display = 'block';
+                userData[question.key] = parseFloat(input.value);
                 nextButton.disabled = false;
             });
             optionsElement.appendChild(input);
@@ -242,7 +247,10 @@ function loadQuestion() {
             const button = document.createElement('button');
             button.className = 'btn btn-danger w-100 mb-2 options';
             button.textContent = option.text;
-            button.addEventListener('click', () => showFeedback(option.feedback));
+            button.addEventListener('click', () =>{ 
+                showFeedback(option.feedback);
+                userData[option.key] = option.value; // Сохраняем выбранное значение
+            });
             optionsElement.appendChild(button);
         }
         
@@ -268,15 +276,22 @@ nextButton.addEventListener('click', () => {
         feedbackElement.style.display = 'none';
         nextButton.disabled = true;
     } else {
-        showCompletionMessage();
+        saveDataAndRedirect(); // Сохраняем данные и перенаправляем на финальную страницу
     }
 });
 
-function showCompletionMessage() {
-    questionElement.textContent = "Спасибо за участие в опросе!";
-    optionsElement.innerHTML = '';
-    feedbackElement.style.display = 'none';
-    nextButton.style.display = 'none';
+// function showCompletionMessage() {
+//     questionElement.textContent = "Спасибо за участие в опросе!";
+//     optionsElement.innerHTML = '';
+//     feedbackElement.style.display = 'none';
+//     nextButton.style.display = 'none';
+// }
+
+function saveDataAndRedirect() {
+    // Сохраняем данные в localStorage
+    localStorage.setItem('userData', JSON.stringify(userData));
+    // Перенаправляем на финальную страницу
+    window.location.href = 'final.html';
 }
 
 loadQuestion();
