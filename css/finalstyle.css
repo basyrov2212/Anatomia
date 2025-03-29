@@ -1,10 +1,8 @@
 body {
-    background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
+    background-color: #201f1c;
 }
 
 .container {
-    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -12,10 +10,20 @@ body {
 .card {
     border: none;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    color: #fff;
 }
 
 .card-header {
     border-radius: 10px 10px 0 0;
+    background-color: #ff331f;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: row;
 }
 
 .result-block {
@@ -23,9 +31,10 @@ body {
     border-bottom: 1px solid #eee;
 }
 
-.result-block:last-child {
-    border-bottom: none;
+.result-block p{
+    color: #fff;     
 }
+
 
 .progress {
     height: 20px;
@@ -39,4 +48,64 @@ body {
 .display-4 {
     font-size: 2.5rem;
     font-weight: bold;
+}
+
+/*---------------------------------- NAVBAR ----------------------------------*/
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+.navbar {
+    background-color: #201f1c;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link{
+    color: #ffffff;
+}
+
+.navbar .navbar-toggler .navbar-toggler-icon {
+    color: #fff;
+  }
+
+  /*----------------------   АНИМАЦИЯ КРУГОВ   ---------------------*/
+
+.background-animation {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 0, 0, 0.3);
+    border-radius: 50%;
+    filter: blur(50px);
+    animation: move 20s infinite ease-in-out;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(200px, 150px);
+    }
+    50% {
+        transform: translate(400px, 50px);
+    }
+    75% {
+        transform: translate(200px, 200px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
 }
