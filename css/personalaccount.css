@@ -3,11 +3,14 @@ body {
     color: #fff;
 }
 
+/*----------------- НАВИГАЦИОННАЯ ПАНЕЛЬ СВЕРХУ -------------------*/
+
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
 }
+
 .navbar {
     background-color: #1a1816;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -15,9 +18,12 @@ body {
     z-index: 10;
 }
 
+/*----------------- БОКОВАЯ ПАНЕЛЬ -------------------*/
+
 .sidebar {
     position: fixed;
-    top: 56px; /* Высота навбара */
+    top: 56px;
+    /* Высота навбара */
     bottom: 0;
     left: 0;
     z-index: 2;
@@ -47,10 +53,12 @@ body {
     padding: 20px;
 }
 
-.support-links img {
-    margin: 10px;
-}
+/*--------------------------------------------------------*/
+/*----------------- Вкладка "МОЙ КУРС" -------------------*/
 
+
+/*--------------------------------------------------------*/
+/*----------- Вкладка "ПОЛЕЗНЫЕ ИНСТРУМЕНТЫ" -------------*/
 .offcanvas-start {
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
@@ -65,15 +73,85 @@ body {
 
 @media (min-width: 768px) {
     .sidebar {
-        transform: translateX(0); /* Сайдбар всегда видим */
+        transform: translateX(0);
+        /* Сайдбар всегда видим */
     }
 }
 
 .btn{
+    background-color: #ff331f;
+    color: #fff;
+}
+
+.btn-mobile {
     position: absolute;
     z-index: 100;
     background-color: #ff331f;
     top: 50%;
     height: 100px;
     width: 5px;
+    border-radius: 20px;
+    border-color: #ff331f;
 }
+
+.tab-header {
+    cursor: pointer;
+    padding: 15px;
+    background: #ff331f;
+    border-radius: 5px;
+    transition: all 0.3s;
+    margin-bottom: 5px;
+}
+
+.tab-header:hover {
+    background: #d4291a;
+}
+
+.tab-header.active {
+    background: #0d6efd;
+    color: white;
+}
+
+.tab-content {
+    padding: 20px;
+    display: none;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.calculator {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+/*--------------------------------------------------------*/
+/*-------------- Вкладка "ТЕХ ПОДДЕРЖКА" -----------------*/
+.support-links img {
+    margin: 10px;
+}
+
+
+
