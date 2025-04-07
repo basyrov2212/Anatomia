@@ -78,7 +78,11 @@ body {
     }
 }
 
-.btn{
+/* .tab-content{
+    display: block;
+} */
+
+.btn {
     background-color: #ff331f;
     color: #fff;
 }
@@ -142,16 +146,57 @@ body {
     display: none;
 }
 
-input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
-  }
+}
+
+/*--------------------------------------------------------*/
+/*------------------- Дневник питания --------------------*/
+/* Стили для дневника питания */
+.card{
+    background-color: #201f1c;
+}
+
+.food-diary {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#food-entries {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 15px;
+}
+
+.food-entry {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    transition: all 0.2s;
+}
+
+.food-entry:hover {
+    background-color: #f8f9fa;
+}
+
+.progress {
+    height: 25px;
+}
+
+.nutrition-badge {
+    font-size: 0.8rem;
+    margin-right: 5px;
+}
+
+.meal-type-badge {
+    font-size: 0.75rem;
+    padding: 3px 6px;
+    margin-right: 8px;
+}
 
 /*--------------------------------------------------------*/
 /*-------------- Вкладка "ТЕХ ПОДДЕРЖКА" -----------------*/
 .support-links img {
     margin: 10px;
 }
-
-
-

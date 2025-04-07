@@ -74,21 +74,32 @@
                     <!-- Контент по умолчанию -->
                     <div id="my-course" class="content-section">
                         <h2>Мой курс</h2>
-                        <p>Здесь будет информация о вашем курсе.</p>
+                        <!-- Вкладка со вступительным материалом -->
+                        <div class="tab-system">
+                            <!-- Заголовок вкладки -->
+                            <div class="tab-header" onclick="toggleTab(this, 'courses-first-tab')">
+                                <h5 class="mb-0">Урок № 0</h5>
+                            </div>
+
+                            <!-- Содержимое вкладки -->
+                            <div id="courses-first-tab" class="tab-content">
+                                <p>Вот тут первый вступительный урок будет</p>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Полезные инструменты -->
                     <div id="tools" class="content-section" style="display: none;">
                         <h2>Полезные инструменты</h2>
-                        <!-- Вкладка с калькулятором -->
+                        <!-- Вкладка "Калькулятор ИМТ" -->
                         <div class="tab-system">
                             <!-- Заголовок вкладки -->
-                            <div class="tab-header active" onclick="toggleTab(this, 'bmi-tab')">
+                            <div class="tab-header" onclick="toggleTab(this, 'bmi-tab')">
                                 <h5 class="mb-0">Калькулятор ИМТ</h5>
                             </div>
 
                             <!-- Содержимое вкладки -->
-                            <div id="bmi-tab" class="tab-content" style="display: block;">
+                            <div id="bmi-tab" class="tab-content">
                                 <div class="calculator">
                                     <div class="mb-3">
                                         <label for="height" class="form-label">Рост (см)</label>
@@ -106,29 +117,136 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Техподдержка -->
-                    <div id="support" class="content-section" style="display: none;">
-                        <h2>Связаться с техподдержкой</h2>
-                        <div class="support-links">
-                            <a href="#" target="_blank">
-                                <img src="img/zaglushka.jpg" alt="Telegram" width="50" height="50">
-                            </a>
-                            <a href="#" target="_blank">
-                                <img src="img/zaglushka.jpg" alt="WhatsApp" width="50" height="50">
-                            </a>
+
+                        <div class="tab-system">
+                            <!-- Вкладка "Дневник питания"-->
+                            <div class="tab-header" onclick="toggleTab(this, 'food-dairy-tab')">
+                                <h5 class="mb-0">Дневник питания</h5>
+                            </div>
+                            <!-- Содержимое вкладки -->
+                            <div id="food-dairy-tab" class="tab-content">
+                                <div class="food-diary">
+                                    <!-- Форма добавления пищи -->
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Добавить приём пищи</h5>
+                                            <form id="add-food-form">
+                                                <div class="row g-3">
+                                                    <div class="col-md-3">
+                                                        <label class="form-label">Приём пищи</label>
+                                                        <select class="form-select" id="meal-type" required>
+                                                            <option value="breakfast">Завтрак</option>
+                                                            <option value="lunch">Обед</option>
+                                                            <option value="dinner">Ужин</option>
+                                                            <option value="snack">Перекус</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <label class="form-label">Продукт/Блюдо</label>
+                                                        <input type="text" class="form-control" id="food-name"
+                                                            placeholder="Например: Овсяная каша" required>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label class="form-label">Калории (ккал)</label>
+                                                        <input type="number" class="form-control" id="food-calories"
+                                                            placeholder="0" min="0" required>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label">Белки (г)</label>
+                                                        <input type="number" step="0.1" class="form-control"
+                                                            id="food-protein" placeholder="0" min="0" required>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label">Жиры (г)</label>
+                                                        <input type="number" step="0.1" class="form-control"
+                                                            id="food-fat" placeholder="0" min="0" required>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label">Углеводы (г)</label>
+                                                        <input type="number" step="0.1" class="form-control"
+                                                            id="food-carbs" placeholder="0" min="0" required>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label">Вес (г)</label>
+                                                        <input type="number" class="form-control" id="food-weight"
+                                                            placeholder="100" min="1" value="100" required>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <button type="submit"
+                                                            class="btn btn-success w-100 mt-2">Добавить</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <!-- Статистика за день -->
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <h5 class="card-title">📅 Сегодня, <span id="current-date"></span></h5>
+                                            <div class="progress mb-3">
+                                                <div id="calories-progress" class="progress-bar progress-bar-striped"
+                                                    role="progressbar" style="width: 0%">0/2000 ккал</div>
+                                            </div>
+                                            <div class="row text-center">
+                                                <div class="col-md-3">
+                                                    <small class="text-muted">Белки</small>
+                                                    <h6 id="protein-sum">0 г</h6>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <small class="text-muted">Жиры</small>
+                                                    <h6 id="fat-sum">0 г</h6>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <small class="text-muted">Углеводы</small>
+                                                    <h6 id="carbs-sum">0 г</h6>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <small class="text-muted">Всего</small>
+                                                    <h6 id="total-calories">0 ккал</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Список добавленных продуктов -->
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Мои записи</h5>
+                                            <div id="food-entries">
+                                                <div class="text-center py-3 text-muted">Пока нет записей</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </main>
+
+                <!-- Техподдержка -->
+                <div id="support" class="content-section" style="display: none;">
+                    <h2>Связаться с техподдержкой</h2>
+                    <div class="support-links">
+                        <a href="#" target="_blank">
+                            <img src="img/zaglushka.jpg" alt="Telegram" width="50" height="50">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img src="img/zaglushka.jpg" alt="WhatsApp" width="50" height="50">
+                        </a>
+                    </div>
+                </div>
         </div>
+        </main>
+    </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="scripts/personalaccountscript.js"></script>
+    <script src="scripts/dairy.js"></script>
 </body>
 
 </html>
