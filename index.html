@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anatomia</title>
-
-    <!--Подключаем библиотеку Bootstrap-->
+    <title>ANATOMIA - Центр здоровья и похудения</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!--Подключаем основные стили-->
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/fonts.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/indexstyle.css">
 </head>
+
 <body>
     <div class="background-animation">
         <div class="circle"></div>
@@ -18,149 +17,46 @@
         <div class="circle"></div>
         <div class="circle"></div>
     </div>
-    <!-- Шапка сайта -->
-    <header>
-        <nav class="navbar navbar-dark">
-            <div class="container-fluid">
-                <!-- Логотип или текст "Anatomia" -->
-                <a class="navbar-brand" href="#">Anatomia</a>
-
-                <!-- Бургер-меню -->
-                <button 
-                    class="navbar-toggler" 
-                    type="button" 
-                    data-bs-toggle="collapse" 
-                    data-bs-target="#navbarNav" 
-                    aria-controls="navbarNav" 
-                    aria-expanded="false" 
-                    aria-label="Навигация"
-                >
-                    <span class="navbar-toggler-icon" style="color: #fff"></span>
-                </button>
-
-                <!-- Вкладки меню -->
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="authform.html">Личный кабинет</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="personalaccount.html">Личный кабинет Пример</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">О нас</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Поддержка</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-        <!-- Основная секция -->
-    <section class="hero-section">
-        <div class="container">
-            <h1>Получите <span class="plananddiet">план тренировок и питания</span> в соответствии с вашим возрастом</h1>
-            <div class="row row-cols-1 row-cols-lg-3 row-cols-md-6 row-cols-sm-12">
-                <!-- Блок 1 -->
-                 
-                <div class="col-lg-3 col-md-6 col-sm-12 age-block">
-                    <a class="testlink" href="test1829.html">
-                        <img src="img/1829.png" alt="Мужчина 18-29">
-                        <p>Возраст: 18-29</p>
-                    </a>
-                </div>
-            
-                <!-- Блок 2 -->
-                <div class="col-lg-3 col-md-6 col-sm-12 age-block">
-                    <a class="testlink" href="test1829.html">
-                        <img src="img/3039.jpeg" alt="Мужчина 30-39">
-                        <p>Возраст: 30-39</p>
-                    </a>
-                </div>
-
-                <!-- Блок 3 -->
-                <div class="col-lg-3 col-md-6 col-sm-12 age-block">
-                    <a class="testlink" href="test1829.html">
-                        <img src="img/4050.jpeg" alt="Мужчина 40-49">
-                        <p>Возраст: 40-49</p>
-                    </a>
-                </div>
-
-                <!-- Блок 4 -->
-                <div class="col-lg-3 col-md-6 col-sm-12 age-block">
-                    <a class="testlink" href="test1829.html">
-                        <img src="img/50.jpeg" alt="Мужчина 50+">
-                        <p>Возраст: 50+</p>
-                    </a>
-                </div>
-            </div>
-            <!-- Текст с согласием -->
-            <div class="consent-text">
-                Продолжая, я даю <a href="consent.html">Согласие на обработку моих персональных данных</a> и соглашаюсь с <a href="privacy.html">Политикой конфиденциальности</a>.
-            </div>
+    <div class="container">
+        <div class="main-title">
+            <h1>ANATOMIA</h1>
+            <p>Твой диетолог, тренер, мама и папа</p>
         </div>
-    </section>
 
-    <!--<section>
-        <div class="container mt-5">
-            <div class="progress mb-4">
-                <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <div id="questionContainer" class="card">
-                <div class="card-body">
-                    <h5 id="questionText" class="card-title"></h5>
-                    <div id="options" class="list-group"></div>
-                    <div id="feedback" class="mt-3"></div>
-                    <button id="nextButton" class="btn btn-primary mt-3" style="display: none;">Следующий вопрос</button>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    
-
-    <!-- Футер -->
-    <footer class="container">
-        <div class="row">
-            <!-- Левый блок: Информация о компании -->
-            <div class="col-md-4 footer-section">
-                <h5>Anatomia</h5>
-                <p>©2025 Anatomia Все права защищены</p>
-                <p>Все права на сайт и материалы, размещенные на сайте, принадлежат ООО «LINAR GARAEV»</p>
-                <p>107023, Г. Нижнекамск, ул. За КФС на Вахитова, дом 30, этаж 2, комната отдела продаж</p>
-                <p>ИНН: 88005553535</p>
-                <p>ОГРН: 111777888222333444</p>
+        <div class="gender-container">
+            <div class="gender-card" id="male-card">
+                <img src="img/men.png"
+                    alt="Мужчина">
+                <div class="gender-label">Я мужчина</div>
             </div>
 
-            <!-- Центральный блок: Контакты -->
-            <div class="col-md-4 footer-section">
-                <h5>Контакты</h5>
-                <p><a href="mailto:help.fithub@mail.ru">Написать в поддержку</a></p>
-                <p>+79257921021</p>
-                <p>help.anatomia@mail.ru</p>
-            </div>
-
-            <!-- Правый блок: Правовая информация -->
-            <div class="col-md-4 footer-section">
-                <h5>Правовая информация</h5>
-                <p><a href="privacy.html">Правила конфиденциальности</a></p>
-                <p><a href="publicoffert.html">Публичная оферта</a></p>
-                <p><a href="unsubscribeform.html">Отмена подписки(не надо)</a></p>
+            <div class="gender-card" id="female-card">
+                <img src="img/women.png"
+                    alt="Женщина">
+                <div class="gender-label">Я женщина</div>
             </div>
         </div>
 
-        <!-- Нижняя часть футера -->
-        <div class="footer-bottom">
-            <p>©2025 Anatomia. Все права защищены.</p>
+        <div class="footer-text">
+            <p>Выберите ваш пол для продолжения</p>
         </div>
-    </footer>
+    </div>
 
-
-    
-    <!-- Подключаем Bootstrap JS (для работы бургер-меню) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/bganimation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Перенаправление при клике на карточку мужчины
+            document.getElementById('male-card').addEventListener('click', function () {
+                window.location.href = 'menspage.html';
+            });
+
+            // Перенаправление при клике на карточку женщины
+            document.getElementById('female-card').addEventListener('click', function () {
+                window.location.href = 'female.html';
+            });
+        });
+    </script>
 </body>
+
 </html>
